@@ -1,0 +1,30 @@
+{
+  "name": "@danielstahl/xmc-voice-controller",
+  "version": "1.0.0",
+  "description": "Control XMC1 with voice control",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node-red"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "parse-commands-to-xmc": "index.js"
+    }
+  },
+  "author": "Daniel Stahl",
+  "license": "ISC",
+  "dependencies": {
+    "node-red": "^3.0.2",
+    "node-red-contrib-amazon-echo": "^0.1.10",
+    "node-red-contrib-virtual-smart-home": "^3.0.6",
+    "tiny-json-http": "^7.4.2"
+  },
+  "devDependencies": {
+    "jest": "^29.2.2",
+    "node-red-node-test-helper": "^0.3.0"
+  }
+}
