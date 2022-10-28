@@ -1,6 +1,6 @@
 {
   "name": "@phillyfan1138/xmc-voice-controller",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Control XMC1 with voice control",
   "main": "index.js",
   "scripts": {
