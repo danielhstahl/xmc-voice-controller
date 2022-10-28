@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('node-type', {
+        category: 'xmc',
+        defaults: {
+            name: { value: '', required: true },
+        },
+        inputs: 1,
+        outputs: 1,
+        //icon: 'vsh_icon.svg',
+        color: '#31C4F3',
+        paletteLabel: 'xmc',
+        label: function () {
+            return this.name || 'xmc'
+        },
+        //oneditprepare: vshOnEditPrepare,
+    });
+</script>
+
+<script type="text/html" data-template-name="node-type">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-tips"><b>Tip:</b> This is here to help.</div>
+</script>
+
+<script type="text/html" data-help-name="node-type">
+    <p>This node communicates with a REST API hosted via https://github.com/danielhstahl/xmc-1-rest-api.</p>
+    <h3>Details</h3>
+    <p>Translates volume commands etc</p>
+ </script>
