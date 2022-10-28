@@ -23,6 +23,9 @@
     "node-red-contrib-virtual-smart-home": "^3.0.6",
     "tiny-json-http": "^7.4.2"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "jest": "^29.2.2",
     "node-red-node-test-helper": "^0.3.0"
