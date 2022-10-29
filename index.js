@@ -23,7 +23,9 @@ const switchCommand = process.env.NODE_ENV === "test" ? () => ({
     "TurnOn": async (node) => {
         node.log("Powering on")
         try {
-            return await tiny.post({ url: `${host}/power/on` })
+            const url = `${host}/power/on`
+            node.log(`Sending request to endpoint ${url}`);
+            return await tiny.post({ url })
         }
         catch (e) {
             node.error(e)
@@ -32,7 +34,9 @@ const switchCommand = process.env.NODE_ENV === "test" ? () => ({
     "TurnOff": async (node) => {
         node.log("Powering off")
         try {
-            return await tiny.post({ url: `${host}/power/off` })
+            const url = `${host}/power/off`
+            node.log(`Sending request to endpoint ${url}`);
+            return await tiny.post({ url })
         }
         catch (e) {
             node.error(e)
@@ -43,8 +47,10 @@ const switchCommand = process.env.NODE_ENV === "test" ? () => ({
         node.log(`Changing input to ${rawInput}`);
         if (rawInput.startsWith("HDMI")) {
             const [_, input] = rawInput.split(" ")
+            const url = `${host}/hdmi/${input}`
+            node.log(`Sending request to endpoint ${url}`);
             try {
-                return await tiny.post({ url: `${host}/hdmi/${input}` })
+                return await tiny.post({ url })
             } catch (e) {
                 node.error(e)
             }

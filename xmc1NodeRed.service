@@ -1,0 +1,14 @@
+[Unit]
+Description=Node Red for XMC1 and Alexa
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/xmc1NodeRed/node_modules/.bin/node-red-pi --max-old-space-size=256
+WorkingDirectory=/usr/bin/xmc1NodeRed
+StandardOutput=file:/tmp/xmc_nr.log
+StandardError=file:/tmp/xmc_nr.log
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
