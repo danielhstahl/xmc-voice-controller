@@ -43,11 +43,10 @@ const switchCommand = process.env.NODE_ENV === "test" ? () => ({
         }
     },
     "SelectInput": async (node, value) => {
-        const { input: rawInput } = value
-        node.log(`Changing input to ${rawInput}`);
-        if (rawInput.startsWith("HDMI")) {
-            const [_, input] = rawInput.split(" ")
-            const url = `${host}/hdmi/${input}`
+        const { input } = value
+        node.log(`Changing input to ${input}`);
+        if (input.startsWith("HDMI")) {
+            const url = `${host}/input/${input}`
             node.log(`Sending request to endpoint ${url}`);
             try {
                 return await tiny.post({ url })
